@@ -1,1 +1,136 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+          content="Library Management System demonstrating arrays.">
+    <title>Library Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div>
+            <h1>📚 Library Management System</h1>
+            <p>Manage books, borrowing and returns</p>
+        </div>
+        <span class="student-badge">PS/ITC/24/0317</span>
+    </header>
+
+    <nav class="navigation">
+        <a href="#dashboard">Dashboard</a>
+        <a href="#books">Book Collection</a>
+        <a href="#add-book">Add Book</a>
+        <a href="#about">About Project</a>
+    </nav>
+
+    <main class="container">
+        <section id="dashboard">
+            <h2>Dashboard</h2>
+            <div class="statistics">
+                <article class="stat-card">
+                    <h3>Total Books</h3>
+                    <p id="total-books">0</p>
+                </article>
+                <article class="stat-card">
+                    <h3>Available</h3>
+                    <p id="available-books">0</p>
+                </article>
+                <article class="stat-card">
+                    <h3>Borrowed</h3>
+                    <p id="borrowed-books">0</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="add-book" class="panel">
+            <h2>Add a New Book</h2>
+            <form id="book-form">
+                <label for="title">Book Title</label>
+                <input id="title" name="title" required maxlength="100"
+                       placeholder="Enter book title">
+
+                <label for="author">Author</label>
+                <input id="author" name="author" required maxlength="80"
+                       placeholder="Enter author name">
+
+                <label for="category">Category</label>
+                <select id="category" name="category" required>
+                    <option value="">Select category</option>
+                    <option>Technology</option>
+                    <option>Science</option>
+                    <option>Education</option>
+                    <option>Literature</option>
+                    <option>History</option>
+                    <option>Business</option>
+                    <option>General</option>
+                </select>
+
+                <label for="isbn">ISBN / Book ID (optional)</label>
+                <input id="isbn" name="isbn" maxlength="30"
+                       placeholder="Enter book ID">
+
+                <button type="submit">Add Book</button>
+                <p id="form-message" role="status"></p>
+            </form>
+        </section>
+
+        <section id="books" class="panel">
+            <h2>Book Collection</h2>
+
+            <div class="controls">
+                <input id="search" type="search"
+                       placeholder="Search by title, author or category..."
+                       aria-label="Search books">
+
+                <select id="filter" aria-label="Filter books">
+                    <option value="all">All Books</option>
+                    <option value="available">Available</option>
+                    <option value="borrowed">Borrowed</option>
+                </select>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Title</th>
+                            <th>Author</th>
+                            <th>Category</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="book-list"></tbody>
+                </table>
+            </div>
+
+            <p id="empty-message" hidden>No books found.</p>
+            <p id="book-count"></p>
+        </section>
+
+        <section id="about" class="panel">
+            <h2>About This Project</h2>
+            <p>
+                This Library Management System demonstrates the use of
+                arrays in a real-world application. It allows users to add,
+                search, borrow and return books.
+            </p>
+            <p><strong>Student:</strong> Emmanuel Gyamfi</p>
+            <p><strong>Index Number:</strong> PS/ITC/24/0317</p>
+            <p><strong>Data Structure:</strong> JavaScript Array</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            Library Management System &copy; 2026 |
+            Developed by Emmanuel Gyamfi
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
